@@ -107,6 +107,15 @@ public class Banco
     }
 
 
+    void depositar(int valor) 
+    {
+        if (this.conta_ativa)
+        {
+            this.saldo += valor;
+        }   
+    }
+
+
 }
 
 
@@ -117,7 +126,13 @@ class conta_conrrente : Banco
 {
     public conta_conrrente(int saldo, string? nome_titular, int cpf, bool conta_ativa) : base(saldo, nome_titular, cpf, conta_ativa)
     {
-
+        this.conta_ativa = conta_ativa;
+        this.saldo = saldo;
+        this.nome_titular= nome_titular;
     }
+
+
+
+
 }
 
